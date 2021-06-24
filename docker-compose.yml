@@ -1,0 +1,14 @@
+version: "3"
+services:
+  counter-app:
+    stdin_open: true
+    tty: true
+    build: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./src:/app/src:ro
+    environment:
+      - CHOKIDAR_USEPOLING=true
+    # env_file:
+    #     - ./.env
